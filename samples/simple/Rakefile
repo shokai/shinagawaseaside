@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'shinagawaseaside'
-#require '../../lib/shinagawaseaside'
+#require 'shinagawaseaside'
+require '../../lib/shinagawaseaside'
 
 ttdb = [ { :name => 'users', :port => 20010},
          { :name => 'videos',:port => 20011},

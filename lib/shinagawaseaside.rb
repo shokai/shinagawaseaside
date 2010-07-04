@@ -2,9 +2,18 @@ $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
 module ShinagawaSeaside
-  VERSION = '0.0.2'
+  VERSION = '0.0.3'
 
   def ShinagawaSeaside::set_tasks(ttdb, opts)
+    tasks = {
+      :start => 'ttstart',
+      :stop => 'ttstop',
+      :restart => 'ttrestart'
+    }
+    tasks[:start] = opts[:start].to_s if opts[:start]
+    tasks[:stop] = opts[:stop].to_s if opts[:stop]
+    tasks[:restart] = opts[:restart].to_s if opts[:restart]
+
     ttdb = ttdb.map{|db|
       h = Hash.new
       db.keys.each{|k|
@@ -26,7 +35,7 @@ module ShinagawaSeaside
     }
 
     desc 'start TokyoTyrant server'
-    task 'ttstart' do
+    task tasks[:start] do
       puts 'starting TokyoTyrant servers..'
       for tt in ttdb do
         Dir.mkdir(tt[:basedir]) if !File.exists?(tt[:basedir])
@@ -43,7 +52,7 @@ module ShinagawaSeaside
     end
     
     desc 'stop TokyoTyrant server'
-    task 'ttstop' do
+    task tasks[:stop] do
       puts 'stopping TokyoTyrant servers..'
       for tt in ttdb do
         if File.exists?(tt[:pidfile])
@@ -70,7 +79,7 @@ module ShinagawaSeaside
     end
     
     desc 'restart TokyoTyrant server'
-    task 'ttrestart' => ['ttstop', 'ttstart']
+    task tasks[:restart] => [tasks[:stop], tasks[:start]]
     
   end
 

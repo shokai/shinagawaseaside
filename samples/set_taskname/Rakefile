@@ -1,0 +1,14 @@
+require 'rubygems'
+#require 'shinagawaseaside'
+require '../../lib/shinagawaseaside'
+
+ttdb = [ { :name => 'users', :port => 20020},
+         { :name => 'videos',:port => 20021},
+         { :name => 'comments', :port => 20022} ]
+
+ShinagawaSeaside::set_tasks(ttdb,
+                            :basedir => File.dirname(__FILE__)+'/ttdb',
+                            :start => 'start', # set task name
+                            :stop => 'stop',
+                            :restart => 'restart'
+                            )
