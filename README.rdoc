@@ -15,7 +15,7 @@ add rake tasks they start/stop tokyo tyrant server
              { :name => 'videos',:port => 20011},
              { :name => 'comments', :port => 20012} ]
 
-    ShinagawaSeaside::set(ttdb, :basedir => File.dirname(__FILE__)+'/ttdb')
+    ShinagawaSeaside::set_tasks(ttdb, :basedir => File.dirname(__FILE__)+'/ttdb')
 
 
 == REQUIREMENTS:

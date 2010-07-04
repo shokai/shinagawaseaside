@@ -4,7 +4,7 @@ $:.unshift(File.dirname(__FILE__)) unless
 module ShinagawaSeaside
   VERSION = '0.0.1'
 
-  def ShinagawaSeaside::set(ttdb, opts)
+  def ShinagawaSeaside::set_tasks(ttdb, opts)
     p ttdb
     p opts
     
