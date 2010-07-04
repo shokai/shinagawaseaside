@@ -8,6 +8,8 @@ add rake tasks they start/stop tokyo tyrant server
 
 == SYNOPSIS:
 
+=== Rakefile
+
     require 'rubygems'
     require 'shinagawaseaside'
 
@@ -16,6 +18,15 @@ add rake tasks they start/stop tokyo tyrant server
              { :name => 'comments', :port => 20012} ]
 
     ShinagawaSeaside::set_tasks(ttdb, :basedir => File.dirname(__FILE__)+'/ttdb')
+
+
+=== Start Server
+
+    rake ttstart
+
+=== Stop Server
+
+    rake ttstop
 
 
 == REQUIREMENTS:
