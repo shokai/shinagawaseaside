@@ -7,5 +7,9 @@ lib/shinagawaseaside.rb
 script/console
 script/destroy
 script/generate
-test/test_helper.rb
-test/test_shinagawaseaside.rb
+spec/shinagawaseaside_spec.rb
+spec/spec.opts
+spec/spec_helper.rb
+tasks/rspec.rake
+samples/Rakefile
+

@@ -1,32 +1,36 @@
 = shinagawaseaside
 
-* http://github.com/#{github_username}/#{project_name}
+* http://github.com/shokai/shinagawaseaside
 
 == DESCRIPTION:
 
-FIX (describe your package)
-
-== FEATURES/PROBLEMS:
-
-* FIX (list of features or problems)
+add rake tasks they start/stop tokyo tyrant server
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+    require 'rubygems'
+    require 'shinagawaseaside'
+
+    ttdb = [ { :name => 'users', :port => 20010},
+             { :name => 'videos',:port => 20011},
+             { :name => 'comments', :port => 20012} ]
+
+    ShinagawaSeaside::set(ttdb, :basedir => File.dirname(__FILE__)+'/ttdb')
+
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* TokyoTyrant
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install ShinagawaSeaside
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2010 FIXME full name
+Copyright (c) 2010 Sho Hashimoto
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
