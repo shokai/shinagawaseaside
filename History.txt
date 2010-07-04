@@ -1,3 +1,7 @@
+=== 0.0.3 2010-07-04
+
+* set names of rake tasks option
+
 === 0.0.2 2010-07-04
 
 * add samples

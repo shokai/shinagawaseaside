@@ -14,5 +14,5 @@ samples/simple/Rakefile
 samples/with_yaml/Rakefile
 samples/with_yaml/config.yaml
 samples/with_yaml/tokyotyrant-read-write.rb
-
+samples/set_taskname/Rakefile
 
