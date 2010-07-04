@@ -35,7 +35,7 @@ add rake tasks they start/stop tokyo tyrant server
 
 == INSTALL:
 
-* sudo gem install ShinagawaSeaside
+* sudo gem install shinagawaseaside
 
 == LICENSE:
 
