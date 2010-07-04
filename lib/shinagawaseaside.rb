@@ -5,9 +5,6 @@ module ShinagawaSeaside
   VERSION = '0.0.1'
 
   def ShinagawaSeaside::set_tasks(ttdb, opts)
-    p ttdb
-    p opts
-    
     ttdb = ttdb.map{|db|
       name = db[:name]
       port = db[:port].to_i
