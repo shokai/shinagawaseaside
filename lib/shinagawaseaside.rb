@@ -6,6 +6,12 @@ module ShinagawaSeaside
 
   def ShinagawaSeaside::set_tasks(ttdb, opts)
     ttdb = ttdb.map{|db|
+      h = Hash.new
+      db.keys.each{|k|
+        h[k.to_sym] = db[k]
+      }
+      h
+    }.map{|db|
       name = db[:name]
       port = db[:port].to_i
       basedir = opts[:basedir]
